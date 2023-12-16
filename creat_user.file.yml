@@ -1,0 +1,7 @@
+---
+- name: My Test File
+  hosts: all
+  become: true
+
+  vars_file:
+  - user.yml

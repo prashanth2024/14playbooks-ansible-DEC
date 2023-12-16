@@ -1,0 +1,30 @@
+---
+- name: Installing Multiple Packages
+  hosts: all
+  become: true
+
+  tasks:
+    - name: installing git 
+      yum:
+        name: git
+        state: installed
+
+    - name: installing httpd
+      yum:
+        name: httpd
+        state: installed
+
+    - name: start httpd service
+      service:
+        name: httpd
+        state: started
+
+    - name: install tree
+      yum:
+        name: tree
+        state: present
+
+    - name: install docker
+      yum:
+        name: docker
+        state: latest
